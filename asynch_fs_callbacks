@@ -1,0 +1,32 @@
+const fs = require("fs")
+
+fs.readFile("./content/first.txt","utf-8",(err,results)=>{
+
+if(err)
+{    console.log(err)
+
+}
+first=results
+
+fs.readFile("./content/second.txt","utf-8",(err,results)=>{
+
+    if(err)
+    {    console.log(err)
+    
+    }
+    const second = results
+
+    fs.writeFile("./content/result_asych.txt",first+second,(err,results)=>{
+        if(err)
+    {    console.log(err)
+    
+    }
+    console.log(results)
+    })
+
+
+
+})
+
+
+})
